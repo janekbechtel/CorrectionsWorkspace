@@ -155,6 +155,46 @@ def ProcessDESYLeptonSFs(filename, postfix, name):
     return result
 
 
+def ProcessDESYLeptonSFs_2017(filename, postfix, name):
+    f = ROOT.TFile(filename)
+    eta_bins = set()
+    pt_bins = set()
+    graphs = []
+    graph_keys = [k for k in f.GetListOfKeys() if "ZMass" in k.GetName() and postfix in k.GetName()]
+    for gk in graph_keys:
+        graph = f.Get(gk.GetName())
+        gr_bins = set()
+        for j in xrange(0, graph.GetN()):
+            gr_bins.add(graph.GetX()[j]-graph.GetEXlow()[j])
+            gr_bins.add(graph.GetX()[j]+graph.GetEXhigh()[j])
+        print 'Graph: %s, bins: %s' % (graph.GetName(), len(gr_bins))
+        graph.Print()
+        pt_bins.update(gr_bins)
+        graphs.append(graph)
+
+        # Perform some ugly string matching and replacement to get the right eta binning
+        labelBins = gk.GetName().replace("ZMassEta","").replace("_"+postfix,"")
+        if "Lt" in labelBins:
+            eta_bins.add(0.0)
+            eta_bins.add(float(labelBins.replace("Lt","").replace("p",".")))
+        elif "Gt" in labelBins:
+            eta_bins.add(2.5)
+            eta_bins.add(float(labelBins.replace("Gt","").replace("p",".")))
+        else:
+            labelBins = labelBins.split("to")
+            for b in labelBins:
+                eta_bins.add(float(b.replace("p",".")))
+    result = ROOT.TH2D(name, name,
+                       len(pt_bins)-1, array('d', sorted(pt_bins)),
+                       len(eta_bins)-1, array('d', sorted(eta_bins)))
+    for i in xrange(1, len(eta_bins)):
+        for j in xrange(1, len(pt_bins)):
+                result.SetBinContent(j, i, graphs[i-1].GetY()[j-1])
+                result.SetBinError(j, i, (graphs[i-1].GetEYhigh()[j-1] + graphs[i-1].GetEYlow()[j-1]) / 2.)
+    result.Print('range')
+    return result
+
+
 
 # file = ROOT.TFile('input/scale_factors/Muon_SF_spring16temp.root')
 # hists = []

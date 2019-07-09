@@ -23,7 +23,7 @@ ROOT.gROOT.LoadMacro("CrystalBallEfficiency.cxx+")
 w = ROOT.RooWorkspace('w')
 
 # Hadronic tau trigger efficiencies
-with open('inputs/triggerSF-Moriond17/di-tau/fitresults_tt_moriond2017.json') as jsonfile:
+with open('inputs/2016/triggerSF-Moriond17/di-tau/fitresults_tt_moriond2017.json') as jsonfile:
     pars = json.load(jsonfile)
     for tautype in ['genuine', 'fake']:
         for iso in ['VLooseIso', 'LooseIso', 'MediumIso', 'TightIso', 'VTightIso', 'VVTightIso']:
@@ -47,7 +47,7 @@ with open('inputs/triggerSF-Moriond17/di-tau/fitresults_tt_moriond2017.json') as
                       (label, label, label))
 
 # EGamma tracking SFs from https://twiki.cern.ch/twiki/bin/viewauth/CMS/EgammaRunIIRecommendations#Electron_Scale_Factors
-loc = 'inputs/EGammaPOG'
+loc = 'inputs/2016/EGammaPOG'
 
 histsToWrap = [
     (loc+'/EGM2D_BtoH_low_RecoSF_Legacy2016.root:EGamma_EffData2D',         'e_trk_ST20_data'),
@@ -71,7 +71,7 @@ wsptools.MakeBinnedCategoryFuncMap(w, 'e_pt', [10., 20., 500.],
 
 ### KIT electron/muon tag and probe results
 # The trigger refers to OR(IsoMu22, IsoTkMu22, IsoMu22_eta2p1, IsoTkMu22_eta2p1)
-loc = 'inputs/KIT/legacy_16_v1'
+loc = 'inputs/2016/KIT/legacy_16_v1'
 
 histsToWrap = [
     (loc+'/ZmmTP_Data_sm_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',                    'm_id_data'),
@@ -126,7 +126,7 @@ for t in ['id', 'iso', 'aiso1', 'aiso2', 'iso_binned', 'trg', 'trg_aiso1', 'trg_
 for t in ['data', 'mc', 'emb', 'ratio', 'ratio_emb']:
     w.factory('expr::m_idiso_%s("@0*@1", m_id_%s, m_iso_%s)' % (t, t, t))
 
-loc = 'inputs/KIT/legacy_16_v1'
+loc = 'inputs/2016/KIT/legacy_16_v1'
 
 histsToWrap = [
     (loc+'/ZeeTP_Data_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',                          'e_id80_data'),
@@ -188,7 +188,7 @@ for t in ['data', 'mc', 'emb', 'ratio', 'ratio_emb']:
     w.factory('expr::e_idiso_%s("@0*@1", e_id_%s, e_iso_%s)' % (t, t, t))
 
 # addressing muon selection for embedding:
-loc = 'inputs/KIT' # so far not remeasured for legacy
+loc = 'inputs/2016/KIT' # so far not remeasured for legacy
 Sel_histsToWrap = [
     (loc+'/ZmmTP_Data_Fits_muon_Selection_EmbeddedID.root:muon_Selection_EmbeddedID',                    'm_sel_idEmb_data'),
     (loc+'/ZmmTP_Data_Fits_muon_Selection_VVLIso.root:muon_Selection_VVLIso',                    'm_sel_vvliso_data')
@@ -202,7 +202,7 @@ for t in ['sel_idEmb','sel_vvliso']:
 
 # DESY electron/muon tag and probe results
 # Muons
-loc = 'inputs/LeptonEfficiencies'
+loc = 'inputs/2016/LeptonEfficiencies'
 
 desyHistsToWrap = [
     (loc+'/Muon/Run2016_legacy/Muon_Run2016_legacy_IdIso.root',
@@ -251,7 +251,7 @@ for t in ['idiso_desy', 'trgEle25_desy']:
 
 
 ### IC electron/muon embedded scale factors
-loc_ic = 'inputs/ICSF/'
+loc_ic = 'inputs/2016/ICSF/'
 
 histsToWrap = [
     (loc_ic+'MuMu8/muon_SFs.root:trg_data', 'm_sel_trg8_1_data'),
@@ -277,7 +277,7 @@ w.factory('expr::m_sel_trg_ratio("min(1./@0,2)", m_sel_trg_data)')
 
 # LO DYJetsToLL Z mass vs pT correction
 histsToWrap = [
-    ('inputs/DYWeights/zpt_weights_summer2016_v2.root:zptmass_histo', 'zptmass_weight_nom')
+    ('inputs/2016/DYWeights/zpt_weights_summer2016_v2.root:zptmass_histo', 'zptmass_weight_nom')
 ]
 
 for task in histsToWrap:
