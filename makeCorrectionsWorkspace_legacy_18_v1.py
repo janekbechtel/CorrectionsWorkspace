@@ -214,59 +214,59 @@ for t in ['trg_MuTau_Mu20Leg_desy','trg_SingleMu_Mu24ORMu27_desy']:
 ### KIT electron/muon tag and probe results
 
 # triggr SFs Muons from KIT
-loc = 'inputs/2018/KIT/v18_1/'
+loc = 'inputs/2018/KIT/v18_2/'
 
 
 histsToWrap = [
-    (loc+'ZmmTP_Data_sm_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',                'm_id_kit_data'),
-    (loc+'ZmmTP_DY_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',                  'm_id_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',           'm_id_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',                'm_id_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',                  'm_id_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_ID_pt_eta_bins.root:ID_pt_eta_bins',           'm_id_kit_embed'),
 
-    (loc+'ZmmTP_Data_sm_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',              'm_iso_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',                'm_iso_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',         'm_iso_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',              'm_iso_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',                'm_iso_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',         'm_iso_kit_embed'),
 
-    (loc+'ZmmTP_Data_sm_Fits_AIso1_pt_eta_bins.root:AIso1_pt_eta_bins',              'm_aiso1_kit_data'),
-    (loc+'ZmmTP_DY_Fits_AIso1_pt_eta_bins.root:AIso1_pt_eta_bins',                'm_aiso1_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_AIso1_pt_eta_bins.root:AIso1_pt_eta_bins',         'm_aiso1_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_AIso1_pt_eta_bins.root:AIso1_pt_eta_bins',              'm_aiso1_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_AIso1_pt_eta_bins.root:AIso1_pt_eta_bins',                'm_aiso1_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_AIso1_pt_eta_bins.root:AIso1_pt_eta_bins',         'm_aiso1_kit_embed'),
 
-    (loc+'ZmmTP_Data_sm_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',              'm_aiso2_kit_data'),
-    (loc+'ZmmTP_DY_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',                'm_aiso2_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',         'm_aiso2_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',              'm_aiso2_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',                'm_aiso2_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',         'm_aiso2_kit_embed'),
 
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu24_pt_eta_bins.root:Trg_IsoMu24_pt_eta_bins',      'm_trg24_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu24_pt_eta_bins.root:Trg_IsoMu24_pt_eta_bins',        'm_trg24_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu24_pt_eta_bins.root:Trg_IsoMu24_pt_eta_bins', 'm_trg24_kit_embed'),
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu24_AIso1_pt_bins_inc_eta',      'm_trg24_aiso1_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu24_AIso1_pt_bins_inc_eta',        'm_trg24_aiso1_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu24_AIso1_pt_bins_inc_eta', 'm_trg24_aiso1_kit_embed'),
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu24_AIso2_pt_bins_inc_eta',      'm_trg24_aiso2_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu24_AIso2_pt_bins_inc_eta',        'm_trg24_aiso2_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu24_AIso2_pt_bins_inc_eta', 'm_trg24_aiso2_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu24_pt_eta_bins.root:Trg_IsoMu24_pt_eta_bins',      'm_trg24_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu24_pt_eta_bins.root:Trg_IsoMu24_pt_eta_bins',        'm_trg24_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu24_pt_eta_bins.root:Trg_IsoMu24_pt_eta_bins', 'm_trg24_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu24_AIso1_pt_bins_inc_eta',      'm_trg24_aiso1_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu24_AIso1_pt_bins_inc_eta',        'm_trg24_aiso1_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu24_AIso1_pt_bins_inc_eta', 'm_trg24_aiso1_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu24_AIso2_pt_bins_inc_eta',      'm_trg24_aiso2_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu24_AIso2_pt_bins_inc_eta',        'm_trg24_aiso2_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu24_AIso2_pt_bins_inc_eta', 'm_trg24_aiso2_kit_embed'),
 
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu27_pt_eta_bins.root:Trg_IsoMu27_pt_eta_bins',      'm_trg27_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu27_pt_eta_bins.root:Trg_IsoMu27_pt_eta_bins',        'm_trg27_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu27_pt_eta_bins.root:Trg_IsoMu27_pt_eta_bins', 'm_trg27_kit_embed'),
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu27_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_AIso1_pt_bins_inc_eta',      'm_trg27_aiso1_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu27_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_AIso1_pt_bins_inc_eta',        'm_trg27_aiso1_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu27_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_AIso1_pt_bins_inc_eta', 'm_trg27_aiso1_kit_embed'),
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu27_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_AIso2_pt_bins_inc_eta',      'm_trg27_aiso2_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu27_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_AIso2_pt_bins_inc_eta',        'm_trg27_aiso2_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu27_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_AIso2_pt_bins_inc_eta', 'm_trg27_aiso2_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu27_pt_eta_bins.root:Trg_IsoMu27_pt_eta_bins',      'm_trg27_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu27_pt_eta_bins.root:Trg_IsoMu27_pt_eta_bins',        'm_trg27_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu27_pt_eta_bins.root:Trg_IsoMu27_pt_eta_bins', 'm_trg27_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu27_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_AIso1_pt_bins_inc_eta',      'm_trg27_aiso1_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu27_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_AIso1_pt_bins_inc_eta',        'm_trg27_aiso1_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu27_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_AIso1_pt_bins_inc_eta', 'm_trg27_aiso1_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu27_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_AIso2_pt_bins_inc_eta',      'm_trg27_aiso2_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu27_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_AIso2_pt_bins_inc_eta',        'm_trg27_aiso2_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu27_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_AIso2_pt_bins_inc_eta', 'm_trg27_aiso2_kit_embed'),
 
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu27_or_IsoMu24_pt_eta_bins.root:Trg_IsoMu27_or_IsoMu24_pt_eta_bins',      'm_trg24_27_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu27_or_IsoMu24_pt_eta_bins.root:Trg_IsoMu27_or_IsoMu24_pt_eta_bins',        'm_trg24_27_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu27_or_IsoMu24_pt_eta_bins.root:Trg_IsoMu27_or_IsoMu24_pt_eta_bins', 'm_trg24_27_kit_embed'),
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta',      'm_trg24_27_aiso1_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta',        'm_trg24_27_aiso1_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta', 'm_trg24_27_aiso1_kit_embed'),
-    (loc+'ZmmTP_Data_sm_Fits_Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta',      'm_trg24_27_aiso2_kit_data'),
-    (loc+'ZmmTP_DY_Fits_Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta',        'm_trg24_27_aiso2_kit_mc'),
-    (loc+'ZmmTP_Embedding_Fits_Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta', 'm_trg24_27_aiso2_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu27_or_IsoMu24_pt_eta_bins.root:Trg_IsoMu27_or_IsoMu24_pt_eta_bins',      'm_trg24_27_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu27_or_IsoMu24_pt_eta_bins.root:Trg_IsoMu27_or_IsoMu24_pt_eta_bins',        'm_trg24_27_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu27_or_IsoMu24_pt_eta_bins.root:Trg_IsoMu27_or_IsoMu24_pt_eta_bins', 'm_trg24_27_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta',      'm_trg24_27_aiso1_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta',        'm_trg24_27_aiso1_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso1_pt_bins_inc_eta', 'm_trg24_27_aiso1_kit_embed'),
+    (loc+'muon_TP_Data_2018_Fits_Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta',      'm_trg24_27_aiso2_kit_data'),
+    (loc+'muon_TP_DY_2018_Fits_Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta',        'm_trg24_27_aiso2_kit_mc'),
+    (loc+'muon_TP_Embedding_2018_Fits_Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta.root:Trg_IsoMu27_or_IsoMu24_AIso2_pt_bins_inc_eta', 'm_trg24_27_aiso2_kit_embed'),
  
-    (loc+'ZmmTP_Data_sm_Fits_Trg_Mu20_pt_eta_bins.root:Trg_Mu20_pt_eta_bins',           'm_trg_MuTau_Mu20Leg_kit_data'), 
-    (loc+'ZmmTP_DY_Fits_Trg_Mu20_pt_eta_bins.root:Trg_Mu20_pt_eta_bins',           'm_trg_MuTau_Mu20Leg_kit_mc'), 
-    (loc+'ZmmTP_Embedding_Fits_Trg_Mu20_pt_eta_bins.root:Trg_Mu20_pt_eta_bins',           'm_trg_MuTau_Mu20Leg_kit_embed'),
+    (loc+'crossmuon_TP_Data_2018_Fits_Trg_Mu20_pt_eta_bins.root:Trg_Mu20_pt_eta_bins',           'm_trg_MuTau_Mu20Leg_kit_data'), 
+    (loc+'crossmuon_TP_DY_2018_Fits_Trg_Mu20_pt_eta_bins.root:Trg_Mu20_pt_eta_bins',           'm_trg_MuTau_Mu20Leg_kit_mc'), 
+    (loc+'crossmuon_TP_Embedding_2018_Fits_Trg_Mu20_pt_eta_bins.root:Trg_Mu20_pt_eta_bins',           'm_trg_MuTau_Mu20Leg_kit_embed'),
 
 ]
 
@@ -311,96 +311,96 @@ for t in ['trg24', 'trg24_binned', 'trg27', 'trg27_binned', 'trg24_27', 'trg24_2
     w.factory('expr::m_%s_embed_kit_ratio("@0/@1", m_%s_kit_data, m_%s_kit_embed)' % (t, t, t))
 
 # trigger SFs Electrons from KIT
-loc = 'inputs/2018/KIT/v18_1/'
+loc = 'inputs/2018/KIT/v18_2/'
 
 histsToWrap = [
-    (loc+'ZeeTP_Data_Fits_ID90_pt_eta_bins.root:ID90_pt_eta_bins',                'e_id90_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_ID90_pt_eta_bins.root:ID90_pt_eta_bins',                  'e_id90_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_ID90_pt_eta_bins.root:ID90_pt_eta_bins',           'e_id90_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',                'e_id80_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',                  'e_id80_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',           'e_id80_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_ID90_pt_eta_bins.root:ID90_pt_eta_bins',                'e_id90_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_ID90_pt_eta_bins.root:ID90_pt_eta_bins',                  'e_id90_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_ID90_pt_eta_bins.root:ID90_pt_eta_bins',           'e_id90_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',                'e_id80_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',                  'e_id80_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_ID80_pt_eta_bins.root:ID80_pt_eta_bins',           'e_id80_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',              'e_iso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',                'e_iso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',         'e_iso_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_AIso_pt_eta_bins.root:AIso_pt_eta_bins',              'e_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_AIso_pt_eta_bins.root:AIso_pt_eta_bins',                'e_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_AIso_pt_eta_bins.root:AIso_pt_eta_bins',         'e_aiso_kit_embed'),
-    # (loc+'ZeeTP_Data_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',              'e_aiso2_kit_data'),
-    # (loc+'ZeeTP_DYJetsToLL_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',                'e_aiso2_kit_mc'),
-    # (loc+'ZeeTP_Embedding_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',         'e_aiso2_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',              'e_iso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',                'e_iso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Iso_pt_eta_bins.root:Iso_pt_eta_bins',         'e_iso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_AIso_pt_eta_bins.root:AIso_pt_eta_bins',              'e_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_AIso_pt_eta_bins.root:AIso_pt_eta_bins',                'e_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_AIso_pt_eta_bins.root:AIso_pt_eta_bins',         'e_aiso_kit_embed'),
+    # (loc+'electron_TP_Data_2018_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',              'e_aiso2_kit_data'),
+    # (loc+'electron_TP_DY_2018_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',                'e_aiso2_kit_mc'),
+    # (loc+'electron_TP_Embedding_2018_Fits_AIso2_pt_eta_bins.root:AIso2_pt_eta_bins',         'e_aiso2_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg_Iso_pt_eta_bins.root:Trg_Iso_pt_eta_bins',      'e_trg_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg_Iso_pt_eta_bins.root:Trg_Iso_pt_eta_bins',        'e_trg_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg_Iso_pt_eta_bins.root:Trg_Iso_pt_eta_bins', 'e_trg_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg_AIso_pt_bins_inc_eta.root:Trg_AIso_pt_bins_inc_eta',      'e_trg_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg_AIso_pt_bins_inc_eta.root:Trg_AIso_pt_bins_inc_eta',        'e_trg_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg_AIso_pt_bins_inc_eta.root:Trg_AIso_pt_bins_inc_eta', 'e_trg_aiso_kit_embed'),
-    # (loc+'ZeeTP_Data_Fits_Trg_AIso2_pt_bins_inc_eta.root:Trg_AIso2_pt_bins_inc_eta',      'e_trg_aiso2_kit_data'),
-    # (loc+'ZeeTP_DYJetsToLL_Fits_Trg_AIso2_pt_bins_inc_eta.root:Trg_AIso2_pt_bins_inc_eta',        'e_trg_aiso2_kit_mc'),
-    # (loc+'ZeeTP_Embedding_Fits_Trg_AIso2_pt_bins_inc_eta.root:Trg_AIso2_pt_bins_inc_eta', 'e_trg_aiso2_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg_Iso_pt_eta_bins.root:Trg_Iso_pt_eta_bins',      'e_trg_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg_Iso_pt_eta_bins.root:Trg_Iso_pt_eta_bins',        'e_trg_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg_Iso_pt_eta_bins.root:Trg_Iso_pt_eta_bins', 'e_trg_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg_AIso_pt_bins_inc_eta.root:Trg_AIso_pt_bins_inc_eta',      'e_trg_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg_AIso_pt_bins_inc_eta.root:Trg_AIso_pt_bins_inc_eta',        'e_trg_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg_AIso_pt_bins_inc_eta.root:Trg_AIso_pt_bins_inc_eta', 'e_trg_aiso_kit_embed'),
+    # (loc+'electron_TP_Data_2018_Fits_Trg_AIso2_pt_bins_inc_eta.root:Trg_AIso2_pt_bins_inc_eta',      'e_trg_aiso2_kit_data'),
+    # (loc+'electron_TP_DY_2018_Fits_Trg_AIso2_pt_bins_inc_eta.root:Trg_AIso2_pt_bins_inc_eta',        'e_trg_aiso2_kit_mc'),
+    # (loc+'electron_TP_Embedding_2018_Fits_Trg_AIso2_pt_bins_inc_eta.root:Trg_AIso2_pt_bins_inc_eta', 'e_trg_aiso2_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg27_Iso_pt_eta_bins.root:Trg27_Iso_pt_eta_bins',      'e_trg27_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_Iso_pt_eta_bins.root:Trg27_Iso_pt_eta_bins',        'e_trg27_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_Iso_pt_eta_bins.root:Trg27_Iso_pt_eta_bins', 'e_trg27_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg27_AIso_pt_bins_inc_eta.root:Trg27_AIso_pt_bins_inc_eta',      'e_trg27_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_AIso_pt_bins_inc_eta.root:Trg27_AIso_pt_bins_inc_eta',        'e_trg27_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_AIso_pt_bins_inc_eta.root:Trg27_AIso_pt_bins_inc_eta', 'e_trg27_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_Iso_pt_eta_bins.root:Trg27_Iso_pt_eta_bins',      'e_trg27_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_Iso_pt_eta_bins.root:Trg27_Iso_pt_eta_bins',        'e_trg27_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_Iso_pt_eta_bins.root:Trg27_Iso_pt_eta_bins', 'e_trg27_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_AIso_pt_bins_inc_eta.root:Trg27_AIso_pt_bins_inc_eta',      'e_trg27_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_AIso_pt_bins_inc_eta.root:Trg27_AIso_pt_bins_inc_eta',        'e_trg27_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_AIso_pt_bins_inc_eta.root:Trg27_AIso_pt_bins_inc_eta', 'e_trg27_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg32_Iso_pt_eta_bins.root:Trg32_Iso_pt_eta_bins',      'e_trg32_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg32_Iso_pt_eta_bins.root:Trg32_Iso_pt_eta_bins',        'e_trg32_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg32_Iso_pt_eta_bins.root:Trg32_Iso_pt_eta_bins', 'e_trg32_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg32_AIso_pt_bins_inc_eta.root:Trg32_AIso_pt_bins_inc_eta',      'e_trg32_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg32_AIso_pt_bins_inc_eta.root:Trg32_AIso_pt_bins_inc_eta',        'e_trg32_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg32_AIso_pt_bins_inc_eta.root:Trg32_AIso_pt_bins_inc_eta', 'e_trg32_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg32_Iso_pt_eta_bins.root:Trg32_Iso_pt_eta_bins',      'e_trg32_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg32_Iso_pt_eta_bins.root:Trg32_Iso_pt_eta_bins',        'e_trg32_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg32_Iso_pt_eta_bins.root:Trg32_Iso_pt_eta_bins', 'e_trg32_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg32_AIso_pt_bins_inc_eta.root:Trg32_AIso_pt_bins_inc_eta',      'e_trg32_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg32_AIso_pt_bins_inc_eta.root:Trg32_AIso_pt_bins_inc_eta',        'e_trg32_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg32_AIso_pt_bins_inc_eta.root:Trg32_AIso_pt_bins_inc_eta', 'e_trg32_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg32_fb_Iso_pt_eta_bins.root:Trg32_fb_Iso_pt_eta_bins',      'e_trg32fb_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg32_fb_Iso_pt_eta_bins.root:Trg32_fb_Iso_pt_eta_bins',        'e_trg32fb_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg32_fb_Iso_pt_eta_bins.root:Trg32_fb_Iso_pt_eta_bins', 'e_trg32fb_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg32_fb_AIso_pt_bins_inc_eta.root:Trg32_fb_AIso_pt_bins_inc_eta',      'e_trg32fb_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg32_fb_AIso_pt_bins_inc_eta.root:Trg32_fb_AIso_pt_bins_inc_eta',        'e_trg32fb_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg32_fb_AIso_pt_bins_inc_eta.root:Trg32_fb_AIso_pt_bins_inc_eta', 'e_trg32fb_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg32_fb_Iso_pt_eta_bins.root:Trg32_fb_Iso_pt_eta_bins',      'e_trg32fb_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg32_fb_Iso_pt_eta_bins.root:Trg32_fb_Iso_pt_eta_bins',        'e_trg32fb_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg32_fb_Iso_pt_eta_bins.root:Trg32_fb_Iso_pt_eta_bins', 'e_trg32fb_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg32_fb_AIso_pt_bins_inc_eta.root:Trg32_fb_AIso_pt_bins_inc_eta',      'e_trg32fb_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg32_fb_AIso_pt_bins_inc_eta.root:Trg32_fb_AIso_pt_bins_inc_eta',        'e_trg32fb_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg32_fb_AIso_pt_bins_inc_eta.root:Trg32_fb_AIso_pt_bins_inc_eta', 'e_trg32fb_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg35_Iso_pt_eta_bins.root:Trg35_Iso_pt_eta_bins',      'e_trg35_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg35_Iso_pt_eta_bins.root:Trg35_Iso_pt_eta_bins',        'e_trg35_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg35_Iso_pt_eta_bins.root:Trg35_Iso_pt_eta_bins', 'e_trg35_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg35_AIso_pt_bins_inc_eta.root:Trg35_AIso_pt_bins_inc_eta',      'e_trg35_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg35_AIso_pt_bins_inc_eta.root:Trg35_AIso_pt_bins_inc_eta',        'e_trg35_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg35_AIso_pt_bins_inc_eta.root:Trg35_AIso_pt_bins_inc_eta', 'e_trg35_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg35_Iso_pt_eta_bins.root:Trg35_Iso_pt_eta_bins',      'e_trg35_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg35_Iso_pt_eta_bins.root:Trg35_Iso_pt_eta_bins',        'e_trg35_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg35_Iso_pt_eta_bins.root:Trg35_Iso_pt_eta_bins', 'e_trg35_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg35_AIso_pt_bins_inc_eta.root:Trg35_AIso_pt_bins_inc_eta',      'e_trg35_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg35_AIso_pt_bins_inc_eta.root:Trg35_AIso_pt_bins_inc_eta',        'e_trg35_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg35_AIso_pt_bins_inc_eta.root:Trg35_AIso_pt_bins_inc_eta', 'e_trg35_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg27_or_Trg32_Iso_pt_eta_bins.root:Trg27_or_Trg32_Iso_pt_eta_bins',      'e_trg27_trg32_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_or_Trg32_Iso_pt_eta_bins.root:Trg27_or_Trg32_Iso_pt_eta_bins',        'e_trg27_trg32_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_or_Trg32_Iso_pt_eta_bins.root:Trg27_or_Trg32_Iso_pt_eta_bins', 'e_trg27_trg32_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg27_or_Trg32_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_AIso_pt_bins_inc_eta',      'e_trg27_trg32_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_or_Trg32_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_AIso_pt_bins_inc_eta',        'e_trg27_trg32_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_or_Trg32_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_AIso_pt_bins_inc_eta', 'e_trg27_trg32_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_or_Trg32_Iso_pt_eta_bins.root:Trg27_or_Trg32_Iso_pt_eta_bins',      'e_trg27_trg32_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_or_Trg32_Iso_pt_eta_bins.root:Trg27_or_Trg32_Iso_pt_eta_bins',        'e_trg27_trg32_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_or_Trg32_Iso_pt_eta_bins.root:Trg27_or_Trg32_Iso_pt_eta_bins', 'e_trg27_trg32_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_or_Trg32_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_AIso_pt_bins_inc_eta',      'e_trg27_trg32_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_or_Trg32_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_AIso_pt_bins_inc_eta',        'e_trg27_trg32_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_or_Trg32_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_AIso_pt_bins_inc_eta', 'e_trg27_trg32_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg27_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg35_Iso_pt_eta_bins',      'e_trg27_trg35_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg35_Iso_pt_eta_bins',        'e_trg27_trg35_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg35_Iso_pt_eta_bins', 'e_trg27_trg35_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg27_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg35_AIso_pt_bins_inc_eta',      'e_trg27_trg35_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg35_AIso_pt_bins_inc_eta',        'e_trg27_trg35_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg35_AIso_pt_bins_inc_eta', 'e_trg27_trg35_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg35_Iso_pt_eta_bins',      'e_trg27_trg35_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg35_Iso_pt_eta_bins',        'e_trg27_trg35_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg35_Iso_pt_eta_bins', 'e_trg27_trg35_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg35_AIso_pt_bins_inc_eta',      'e_trg27_trg35_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg35_AIso_pt_bins_inc_eta',        'e_trg27_trg35_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg35_AIso_pt_bins_inc_eta', 'e_trg27_trg35_aiso_kit_embed'),
 
 
-    (loc+'ZeeTP_Data_Fits_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg32_or_Trg35_Iso_pt_eta_bins',      'e_trg32_trg35_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg32_or_Trg35_Iso_pt_eta_bins',        'e_trg32_trg35_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg32_or_Trg35_Iso_pt_eta_bins', 'e_trg32_trg35_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg32_or_Trg35_AIso_pt_bins_inc_eta',      'e_trg32_trg35_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg32_or_Trg35_AIso_pt_bins_inc_eta',        'e_trg32_trg35_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg32_or_Trg35_AIso_pt_bins_inc_eta', 'e_trg32_trg35_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg32_or_Trg35_Iso_pt_eta_bins',      'e_trg32_trg35_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg32_or_Trg35_Iso_pt_eta_bins',        'e_trg32_trg35_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg32_or_Trg35_Iso_pt_eta_bins', 'e_trg32_trg35_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg32_or_Trg35_AIso_pt_bins_inc_eta',      'e_trg32_trg35_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg32_or_Trg35_AIso_pt_bins_inc_eta',        'e_trg32_trg35_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg32_or_Trg35_AIso_pt_bins_inc_eta', 'e_trg32_trg35_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins',      'e_trg27_trg32_trg35_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins',        'e_trg27_trg32_trg35_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins', 'e_trg27_trg32_trg35_kit_embed'),
-    (loc+'ZeeTP_Data_Fits_Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta',      'e_trg27_trg32_trg35_aiso_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta',        'e_trg27_trg32_trg35_aiso_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta', 'e_trg27_trg32_trg35_aiso_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins',      'e_trg27_trg32_trg35_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins',        'e_trg27_trg32_trg35_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins.root:Trg27_or_Trg32_or_Trg35_Iso_pt_eta_bins', 'e_trg27_trg32_trg35_kit_embed'),
+    (loc+'electron_TP_Data_2018_Fits_Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta',      'e_trg27_trg32_trg35_aiso_kit_data'),
+    (loc+'electron_TP_DY_2018_Fits_Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta',        'e_trg27_trg32_trg35_aiso_kit_mc'),
+    (loc+'electron_TP_Embedding_2018_Fits_Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta.root:Trg27_or_Trg32_or_Trg35_AIso_pt_bins_inc_eta', 'e_trg27_trg32_trg35_aiso_kit_embed'),
 
-    (loc+'ZeeTP_Data_Fits_Ele24_Iso_pt_eta_bins.root:Ele24_Iso_pt_eta_bins',      'e_trg_EleTau_Ele24Leg_kit_data'),
-    (loc+'ZeeTP_DYJetsToLL_Fits_Ele24_Iso_pt_eta_bins.root:Ele24_Iso_pt_eta_bins',        'e_trg_EleTau_Ele24Leg_kit_mc'),
-    (loc+'ZeeTP_Embedding_Fits_Ele24_Iso_pt_eta_bins.root:Ele24_Iso_pt_eta_bins',      'e_trg_EleTau_Ele24Leg_kit_embed'),
+    (loc+'crosselectron_TP_Data_2018_Fits_Ele24_Iso_pt_eta_bins.root:Ele24_Iso_pt_eta_bins',      'e_trg_EleTau_Ele24Leg_kit_data'),
+    (loc+'crosselectron_TP_DY_2018_Fits_Ele24_Iso_pt_eta_bins.root:Ele24_Iso_pt_eta_bins',        'e_trg_EleTau_Ele24Leg_kit_mc'),
+    (loc+'crosselectron_TP_Embedding_2018_Fits_Ele24_Iso_pt_eta_bins.root:Ele24_Iso_pt_eta_bins',      'e_trg_EleTau_Ele24Leg_kit_embed'),
     
 
 ]
@@ -490,115 +490,42 @@ for t in ['trg', 'trg_binned', 'trg27_trg32', 'trg27_trg32_binned', 'trg27_trg35
     w.factory('expr::e_%s_kit_ratio("@0/@1", e_%s_kit_data, e_%s_kit_mc)' % (t, t, t))
     w.factory('expr::e_%s_embed_kit_ratio("@0/@1", e_%s_kit_data, e_%s_kit_embed)' % (t, t, t))
 
-loc = 'inputs/2018/KIT/v17_5/'
-## Tau Leg MuTau ##
-pt_bins = [0,20,25,30,35,40,45,50,60,80,100,150,200,10000]
-n_bins=len(pt_bins)-1
+loc = 'inputs/2018/KIT/TauTrigger/'
+TauTriggerFile = ROOT.TFile(loc+"output_2018_tau_leg.root", "read")
+for wp in ["vloose", "loose", "medium", "tight", "vtight", "vvtight"]:
+    ## Tau Leg MuTau ##
+    mt_tau_leg_kit_data = TauTriggerFile.Get("hist_MuTauTriggerEfficiency_{}TauMVA_DATA".format(wp))
+    mt_tau_leg_kit_embed = TauTriggerFile.Get("hist_MuTauTriggerEfficiency_{}TauMVA_EMB".format(wp))
+    mt_tau_leg_kit_mc = TauTriggerFile.Get("hist_MuTauTriggerEfficiency_{}TauMVA_MC".format(wp))
 
-mt_tau_leg_kit_data = ROOT.TH1F("mt_tau_leg_kit_data","mt_tau_leg_kit_data", n_bins, array("d",pt_bins))
-mt_tau_leg_kit_data.SetBinContent(1,1.0)
-mt_tau_leg_kit_data.SetBinContent(2,0.03861)
-mt_tau_leg_kit_data.SetBinContent(3,0.3874)
-mt_tau_leg_kit_data.SetBinContent(4,0.71877)
-mt_tau_leg_kit_data.SetBinContent(5,0.7767)
-mt_tau_leg_kit_data.SetBinContent(6,0.80382)
-mt_tau_leg_kit_data.SetBinContent(7,0.82577)
-mt_tau_leg_kit_data.SetBinContent(8,0.84958)
-mt_tau_leg_kit_data.SetBinContent(9,0.878947)
-mt_tau_leg_kit_data.SetBinContent(10,0.982456)
-mt_tau_leg_kit_data.SetBinContent(11,0.9107)
-mt_tau_leg_kit_data.SetBinContent(12,1.0)
-mt_tau_leg_kit_data.SetBinContent(13,1.0)
+    wsptools.SafeWrapHist(w,['t_pt'],mt_tau_leg_kit_data, name="mt_LooseChargedIsoPFTau27_{}_kit_data".format(wp))
+    wsptools.SafeWrapHist(w,['t_pt'],mt_tau_leg_kit_mc, name="mt_LooseChargedIsoPFTau27_{}_kit_mc".format(wp))
+    wsptools.SafeWrapHist(w,['t_pt'],mt_tau_leg_kit_embed, name="mt_LooseChargedIsoPFTau27_{}_kit_embed".format(wp))
+    w.factory('expr::mt_LooseChargedIsoPFTau27_{}_kit_ratio("@0/@1", mt_LooseChargedIsoPFTau27_{}_kit_data, mt_LooseChargedIsoPFTau27_{}_kit_mc)'.format(wp,wp,wp))
+    w.factory('expr::mt_emb_LooseChargedIsoPFTau27_{}_kit_ratio("@0/@1", mt_LooseChargedIsoPFTau27_{}_kit_data, mt_LooseChargedIsoPFTau27_{}_kit_embed)'.format(wp,wp,wp))
 
-mt_tau_leg_kit_embed = ROOT.TH1F("mt_tau_leg_kit_embed","mt_tau_leg_kit_embed", n_bins, array("d",pt_bins))
-mt_tau_leg_kit_embed.SetBinContent(1,1.0)
-mt_tau_leg_kit_embed.SetBinContent(2,0.02954)
-mt_tau_leg_kit_embed.SetBinContent(3,0.1082)
-mt_tau_leg_kit_embed.SetBinContent(4,0.3031)
-mt_tau_leg_kit_embed.SetBinContent(5,0.52798)
-mt_tau_leg_kit_embed.SetBinContent(6,0.6543)
-mt_tau_leg_kit_embed.SetBinContent(7,0.7351)
-mt_tau_leg_kit_embed.SetBinContent(8,0.8669)
-mt_tau_leg_kit_embed.SetBinContent(9,0.9571)
-mt_tau_leg_kit_embed.SetBinContent(10,0.95)
-mt_tau_leg_kit_embed.SetBinContent(11,0.953)
-mt_tau_leg_kit_embed.SetBinContent(12,1.0)
-mt_tau_leg_kit_embed.SetBinContent(13,1.0)
+    ## Tau Leg ETau ##
+    et_tau_leg_kit_data = TauTriggerFile.Get("hist_ETauTriggerEfficiency_{}TauMVA_DATA".format(wp))
+    et_tau_leg_kit_embed = TauTriggerFile.Get("hist_ETauTriggerEfficiency_{}TauMVA_EMB".format(wp))
+    et_tau_leg_kit_mc = TauTriggerFile.Get("hist_ETauTriggerEfficiency_{}TauMVA_MC".format(wp))
 
-wsptools.SafeWrapHist(w,['t_pt'],mt_tau_leg_kit_data, name="mt_LooseChargedIsoPFTau27_kit_data")
-wsptools.SafeWrapHist(w,['t_pt'],mt_tau_leg_kit_embed, name="mt_LooseChargedIsoPFTau27_kit_embed")
-w.factory('expr::mt_emb_LooseChargedIsoPFTau27_kit_ratio("@0/@1", mt_LooseChargedIsoPFTau27_kit_data, mt_LooseChargedIsoPFTau27_kit_embed)')
+    wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_data, name="et_LooseChargedIsoPFTau30_{}_kit_data".format(wp))
+    wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_mc, name="et_LooseChargedIsoPFTau30_{}_kit_mc".format(wp))
+    wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_embed, name="et_LooseChargedIsoPFTau30_{}_kit_embed".format(wp))
+    w.factory('expr::et_LooseChargedIsoPFTau30_{}_kit_ratio("@0/@1", et_LooseChargedIsoPFTau30_{}_kit_data, et_LooseChargedIsoPFTau30_{}_kit_mc)'.format(wp,wp,wp))
+    w.factory('expr::et_emb_LooseChargedIsoPFTau30_{}_kit_ratio("@0/@1", et_LooseChargedIsoPFTau30_{}_kit_data, et_LooseChargedIsoPFTau30_{}_kit_embed)'.format(wp,wp,wp))
 
-##TauLeg TauTau
-et_tau_leg_kit_data = ROOT.TH1F("et_tau_leg_kit_data","et_tau_leg_kit_data", n_bins, array("d",pt_bins))
-et_tau_leg_kit_data.SetBinContent(1,1.0)
-et_tau_leg_kit_data.SetBinContent(2,0.03907)
-et_tau_leg_kit_data.SetBinContent(3,0.12258)
-et_tau_leg_kit_data.SetBinContent(4,0.54274)
-et_tau_leg_kit_data.SetBinContent(5,0.67389)
-et_tau_leg_kit_data.SetBinContent(6,1,0.74097)
-et_tau_leg_kit_data.SetBinContent(7,1,0.81055)
-et_tau_leg_kit_data.SetBinContent(8,0.85177)
-et_tau_leg_kit_data.SetBinContent(9,0.89533)
-et_tau_leg_kit_data.SetBinContent(10,0.88384)
-et_tau_leg_kit_data.SetBinContent(11,0.89865)
-et_tau_leg_kit_data.SetBinContent(12,0.83871)
-et_tau_leg_kit_data.SetBinContent(13,1.0)
+    ## Tau Leg TauTau ##
+    tt_tau_leg_kit_data = TauTriggerFile.Get("hist_TauLeadTriggerEfficiency_{}TauMVA_DATA".format(wp))
+    tt_tau_leg_kit_embed = TauTriggerFile.Get("hist_TauLeadTriggerEfficiency_{}TauMVA_EMB".format(wp))
+    tt_tau_leg_kit_mc = TauTriggerFile.Get("hist_TauLeadTriggerEfficiency_{}TauMVA_MC".format(wp))
 
-et_tau_leg_kit_embed = ROOT.TH1F("et_tau_leg_kit_embed","et_tau_leg_kit_embed", n_bins, array("d",pt_bins))
-et_tau_leg_kit_embed.SetBinContent(1,1.0)
-et_tau_leg_kit_embed.SetBinContent(2,0.08679)
-et_tau_leg_kit_embed.SetBinContent(3,0.24961)
-et_tau_leg_kit_embed.SetBinContent(4,0.42047)
-et_tau_leg_kit_embed.SetBinContent(5,0.63273)
-et_tau_leg_kit_embed.SetBinContent(6,1,0.78850)
-et_tau_leg_kit_embed.SetBinContent(7,1,0.88177)
-et_tau_leg_kit_embed.SetBinContent(8,0.95065)
-et_tau_leg_kit_embed.SetBinContent(9,0.98826)
-et_tau_leg_kit_embed.SetBinContent(10,0.99576)
-et_tau_leg_kit_embed.SetBinContent(11,0.99617)
-et_tau_leg_kit_embed.SetBinContent(12,0.98742)
-et_tau_leg_kit_embed.SetBinContent(13,1.0)
-
-wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_data, name="et_LooseChargedIsoPFTau30_kit_data")
-wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_embed, name="et_LooseChargedIsoPFTau30_kit_embed")
-w.factory('expr::et_emb_LooseChargedIsoPFTau30_kit_ratio("@0/@1", et_LooseChargedIsoPFTau30_kit_data, et_LooseChargedIsoPFTau30_kit_embed)')
-
-tt_tau_leg_kit_data = ROOT.TH1F("tt_tau_leg_kit_data","tt_tau_leg_kit_data", n_bins, array("d",pt_bins))
-tt_tau_leg_kit_data.SetBinContent(1,1.0)
-tt_tau_leg_kit_data.SetBinContent(2,0.0030)
-tt_tau_leg_kit_data.SetBinContent(3,0.0086)
-tt_tau_leg_kit_data.SetBinContent(4,0.0317)
-tt_tau_leg_kit_data.SetBinContent(5,0.2727)
-tt_tau_leg_kit_data.SetBinContent(6,0.4235)
-tt_tau_leg_kit_data.SetBinContent(7,0.5061)
-tt_tau_leg_kit_data.SetBinContent(8,0.6098)
-tt_tau_leg_kit_data.SetBinContent(9,0.6877)
-tt_tau_leg_kit_data.SetBinContent(10,0.7565)
-tt_tau_leg_kit_data.SetBinContent(11,0.6973)
-tt_tau_leg_kit_data.SetBinContent(12,0.7019)
-tt_tau_leg_kit_data.SetBinContent(13,0.6579)
-
-tt_tau_leg_kit_embed = ROOT.TH1F("tt_tau_leg_kit_embed","tt_tau_leg_kit_embed", n_bins, array("d",pt_bins))
-tt_tau_leg_kit_data.SetBinContent(1,1.0)
-tt_tau_leg_kit_embed.SetBinContent(2,0.0287)
-tt_tau_leg_kit_embed.SetBinContent(3,0.1099)
-tt_tau_leg_kit_embed.SetBinContent(4,0.3018)
-tt_tau_leg_kit_embed.SetBinContent(5,0.5256)
-tt_tau_leg_kit_embed.SetBinContent(6,0.6567)
-tt_tau_leg_kit_embed.SetBinContent(7,0.7417)
-tt_tau_leg_kit_embed.SetBinContent(8,0.7963)
-tt_tau_leg_kit_embed.SetBinContent(9,0.8754)
-tt_tau_leg_kit_embed.SetBinContent(10,0.9413)
-tt_tau_leg_kit_embed.SetBinContent(11,0.9489)
-tt_tau_leg_kit_embed.SetBinContent(12,0.9615)
-tt_tau_leg_kit_embed.SetBinContent(13,0.9639)
-
-
-wsptools.SafeWrapHist(w,['t_pt'],tt_tau_leg_kit_data, name="tt_PFTau35OR40_tight_kit_data")
-wsptools.SafeWrapHist(w,['t_pt'],tt_tau_leg_kit_embed, name="tt_PFTau35OR40_tight_kit_embed")
-w.factory('expr::tt_emb_PFTau35OR40_tight_kit_ratio("@0/@1", tt_PFTau35OR40_tight_kit_data, tt_PFTau35OR40_tight_kit_embed)')
-
+    wsptools.SafeWrapHist(w,['t_pt'],tt_tau_leg_kit_data, name="tt_PFTau35OR40_{}_kit_data".format(wp))
+    wsptools.SafeWrapHist(w,['t_pt'],tt_tau_leg_kit_mc, name="tt_PFTau35OR40_{}_kit_mc".format(wp))
+    wsptools.SafeWrapHist(w,['t_pt'],tt_tau_leg_kit_embed, name="tt_PFTau35OR40_{}_kit_embed".format(wp))
+    w.factory('expr::tt_PFTau35OR40_{}_kit_ratio("@0/@1", tt_PFTau35OR40_{}_kit_data, tt_PFTau35OR40_{}_kit_mc)'.format(wp,wp,wp))
+    w.factory('expr::tt_emb_PFTau35OR40_{}_kit_ratio("@0/@1", tt_PFTau35OR40_{}_kit_data, tt_PFTau35OR40_{}_kit_embed)'.format(wp,wp,wp))
+TauTriggerFile.Close()
 
 '''
 loc = 'inputs/2018/ICSF/em_osss_2017/'
@@ -708,5 +635,5 @@ for t in ['trg_MuTau_Mu20Leg_kit']:
 w.importClassCode('CrystalBallEfficiency')
 
 w.Print()
-w.writeToFile('htt_scalefactors_v18_1.root')
+w.writeToFile('htt_scalefactors_v18_2.root')
 w.Delete()
