@@ -491,7 +491,9 @@ for t in ['trg', 'trg_binned', 'trg27_trg32', 'trg27_trg32_binned', 'trg27_trg35
     w.factory('expr::e_%s_embed_kit_ratio("@0/@1", e_%s_kit_data, e_%s_kit_embed)' % (t, t, t))
 
 loc = 'inputs/2018/KIT/TauTrigger/'
-TauTriggerFile = ROOT.TFile(loc+"output_2018_tau_leg.root", "read")
+#TauTriggerFile = ROOT.TFile(loc+"output_2018_tau_leg.root", "read")
+TauTriggerFile = ROOT.TFile("../output_new.root", "read")
+TauTriggerFile_et = ROOT.TFile("../output_new_et.root", "read")
 for wp in ["vloose", "loose", "medium", "tight", "vtight", "vvtight"]:
     ## Tau Leg MuTau ##
     mt_tau_leg_kit_data = TauTriggerFile.Get("hist_MuTauTriggerEfficiency_{}TauMVA_DATA".format(wp))
@@ -505,9 +507,9 @@ for wp in ["vloose", "loose", "medium", "tight", "vtight", "vvtight"]:
     w.factory('expr::mt_emb_LooseChargedIsoPFTau27_{}_kit_ratio("@0/@1", mt_LooseChargedIsoPFTau27_{}_kit_data, mt_LooseChargedIsoPFTau27_{}_kit_embed)'.format(wp,wp,wp))
 
     ## Tau Leg ETau ##
-    et_tau_leg_kit_data = TauTriggerFile.Get("hist_ETauTriggerEfficiency_{}TauMVA_DATA".format(wp))
-    et_tau_leg_kit_embed = TauTriggerFile.Get("hist_ETauTriggerEfficiency_{}TauMVA_EMB".format(wp))
-    et_tau_leg_kit_mc = TauTriggerFile.Get("hist_ETauTriggerEfficiency_{}TauMVA_MC".format(wp))
+    et_tau_leg_kit_data = TauTriggerFile_et.Get("hist_ETauTriggerEfficiency_{}TauMVA_DATA".format(wp))
+    et_tau_leg_kit_embed = TauTriggerFile_et.Get("hist_ETauTriggerEfficiency_{}TauMVA_EMB".format(wp))
+    et_tau_leg_kit_mc = TauTriggerFile_et.Get("hist_ETauTriggerEfficiency_{}TauMVA_MC".format(wp))
 
     wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_data, name="et_LooseChargedIsoPFTau30_{}_kit_data".format(wp))
     wsptools.SafeWrapHist(w,['t_pt'],et_tau_leg_kit_mc, name="et_LooseChargedIsoPFTau30_{}_kit_mc".format(wp))
