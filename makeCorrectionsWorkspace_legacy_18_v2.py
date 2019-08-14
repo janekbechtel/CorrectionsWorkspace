@@ -526,6 +526,16 @@ for wp in ["vloose", "loose", "medium", "tight", "vtight", "vvtight"]:
     w.factory('expr::tt_PFTau35OR40_{}_kit_ratio("@0/@1", tt_PFTau35OR40_{}_kit_data, tt_PFTau35OR40_{}_kit_mc)'.format(wp,wp,wp))
     w.factory('expr::tt_emb_PFTau35OR40_{}_kit_ratio("@0/@1", tt_PFTau35OR40_{}_kit_data, tt_PFTau35OR40_{}_kit_embed)'.format(wp,wp,wp))
 TauTriggerFile.Close()
+
+# LO DYJetsToLL Z mass vs pT correction
+histsToWrap = [
+    ('inputs/2018/KIT/zpt_reweighting/zptm_weights_2018_kit.root:zptmass_histo', 'zptmass_weight_nom')
+]
+
+for task in histsToWrap:
+    wsptools.SafeWrapHist(w, ['z_gen_mass', 'z_gen_pt'],
+                          GetFromTFile(task[0]), name=task[1])
+    
 w.importClassCode('CrystalBallEfficiency')
 
 w.Print()
