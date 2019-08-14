@@ -589,6 +589,15 @@ for t in ['trg_MuTau_Mu20Leg_kit']:
     w.factory('expr::m_%s_ratio_mc("@0/@1", m_%s_data, m_%s_mc)' % (t, t, t))
     w.factory('expr::m_%s_ratio_embed("@0/@1", m_%s_data, m_%s_embed)' % (t, t, t))
 
+# LO DYJetsToLL Z mass vs pT correction
+histsToWrap = [
+    ('inputs/2017/KIT/zpt_reweighting/zptm_weights_2017_kit.root:zptmass_histo', 'zptmass_weight_nom')
+]
+
+for task in histsToWrap:
+    wsptools.SafeWrapHist(w, ['z_gen_mass', 'z_gen_pt'],
+                          GetFromTFile(task[0]), name=task[1])
+
 w.importClassCode('CrystalBallEfficiency')
 
 #w.Print()

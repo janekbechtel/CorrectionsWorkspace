@@ -274,15 +274,15 @@ for task in histsToWrap:
     w.factory('expr::m_sel_trg_data("0.935*(@0*@3+@1*@2-@1*@3)", m_sel_trg8_1_data, m_sel_trg17_1_data, m_sel_trg8_2_data, m_sel_trg17_2_data)')
 w.factory('expr::m_sel_trg_ratio("min(1./@0,2)", m_sel_trg_data)')
 
-
 # LO DYJetsToLL Z mass vs pT correction
 histsToWrap = [
-    ('inputs/2016/DYWeights/zpt_weights_summer2016_v2.root:zptmass_histo', 'zptmass_weight_nom')
+    ('inputs/2016/KIT/zpt_reweighting/zptm_weights_2016_kit.root:zptmass_histo', 'zptmass_weight_nom')
 ]
 
 for task in histsToWrap:
     wsptools.SafeWrapHist(w, ['z_gen_mass', 'z_gen_pt'],
                           GetFromTFile(task[0]), name=task[1])
+    
 
 w.importClassCode('CrystalBallEfficiency')
 
