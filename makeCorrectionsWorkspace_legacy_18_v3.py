@@ -25,52 +25,17 @@ w = ROOT.RooWorkspace('w')
 ### Muon tracking efficiency scale factor from the Tracking POG
 loc = 'inputs/2018/TrackingPOG'
 
-muon_trk_eff_hist = wsptools.TGraphAsymmErrorsToTH1D(GetFromTFile(loc+'/fits_muon_trk_2017.root:ratio_eff_eta3_dr030e030_corr'))
+muon_trk_eff_hist = wsptools.TGraphAsymmErrorsToTH1D(GetFromTFile(loc+'/fits.root:ratio_eff_eta3_dr030e030_corr'))
 wsptools.SafeWrapHist(w, ['m_eta'], muon_trk_eff_hist, name='m_trk_ratio')
 
 ### Electron reconstruction efficiency scale factor from the egamma POG
 loc = 'inputs/2018/EGammaPOG'
 
-electron_reco_eff_hist = GetFromTFile(loc+'/egammaEffi.txt_EGM2D_run2017BCDEF_passingRECO.root:EGamma_SF2D')
-electron_reco_eff_hist_lowEt = GetFromTFile(loc+'/egammaEffi.txt_EGM2D_run2017BCDEF_passingRECO_lowEt.root:EGamma_SF2D')
+electron_trk_eff_hist = GetFromTFile(loc+'/egammaEffi.txt_EGM2D_updatedAll_2018.root:EGamma_SF2D')
+electron_reco_eff_hist = GetFromTFile(loc+'/egammaEffi.txt_EGM2D_updatedAll_2018.root:EGamma_SF2D')
+wsptools.SafeWrapHist(w, ['e_eta','e_pt'], electron_trk_eff_hist, name='e_trk_ratio')
 
-eta_bins = set()
-pt_bins = set()
-
-for i in range(electron_reco_eff_hist.GetXaxis().GetNbins()):
-    lowbin = electron_reco_eff_hist.GetXaxis().GetBinLowEdge(i+1)
-    upbin = lowbin + electron_reco_eff_hist.GetXaxis().GetBinWidth(i+1)
-    eta_bins.add(lowbin)
-    eta_bins.add(upbin)
-
-for i in range(electron_reco_eff_hist_lowEt.GetYaxis().GetNbins()):
-    lowbin = electron_reco_eff_hist_lowEt.GetYaxis().GetBinLowEdge(i+1)
-    upbin = lowbin + electron_reco_eff_hist_lowEt.GetYaxis().GetBinWidth(i+1)
-    pt_bins.add(lowbin)
-    pt_bins.add(upbin)
-
-for i in range(electron_reco_eff_hist.GetYaxis().GetNbins()):
-    lowbin = electron_reco_eff_hist.GetYaxis().GetBinLowEdge(i+1)
-    upbin = lowbin + electron_reco_eff_hist.GetYaxis().GetBinWidth(i+1)
-    pt_bins.add(lowbin)
-    pt_bins.add(upbin)
-
-eta_bins = np.array(sorted(eta_bins))
-pt_bins = np.array(sorted(pt_bins))
-
-electron_reco_eff_hist_full = ROOT.TH2F("eGammaSFs","eGammaSFs",len(eta_bins)-1,eta_bins,len(pt_bins)-1,pt_bins)
-
-for i in range(len(eta_bins)-1):
-    for j in range(len(pt_bins)-1):
-        value = 0.0
-        if j == 0:
-            searched_bin = electron_reco_eff_hist_lowEt.FindBin(eta_bins[i],pt_bins[j])
-            value = electron_reco_eff_hist_lowEt.GetBinContent(searched_bin)
-        else:
-            value = electron_reco_eff_hist.GetBinContent(i+1,j)
-        electron_reco_eff_hist_full.SetBinContent(i+1,j+1,value)
-
-wsptools.SafeWrapHist(w, ['e_eta','e_pt'], electron_reco_eff_hist_full, name='e_reco_ratio')
+wsptools.SafeWrapHist(w, ['e_eta','e_pt'], electron_reco_eff_hist, name='e_reco_ratio')
 
 ################################################
 ### IC muon scale factors for normalisation ####
