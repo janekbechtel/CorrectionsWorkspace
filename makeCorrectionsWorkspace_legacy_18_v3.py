@@ -205,6 +205,87 @@ for t in ['trg24', 'trg24_binned', 'trg27', 'trg27_binned', 'trg24_27', 'trg24_2
     w.factory('expr::m_%s_kit_ratio("@0/@1", m_%s_kit_data, m_%s_kit_mc)' % (t, t, t))
     w.factory('expr::m_%s_embed_kit_ratio("@0/@1", m_%s_kit_data, m_%s_kit_embed)' % (t, t, t))
 
+# emu and mu+tau trigger and loose (<0.2) muon isolation scale factors from IC
+
+loc = 'inputs/2018/ICSF/'
+
+histsToWrap = [
+    (loc+'EM_HI/muon_SFs.root:data_trg_eff', 'm_trg_23_data'),
+    (loc+'EM_HI/muon_SFs.root:ZLL_trg_eff', 'm_trg_23_mc'),
+    (loc+'EM_HI/muon_SFs.root:embed_trg_eff', 'm_trg_23_embed'),
+    (loc+'EM_LO/muon_SFs.root:data_trg_eff', 'm_trg_8_data'),
+    (loc+'EM_LO/muon_SFs.root:ZLL_trg_eff', 'm_trg_8_mc'),
+    (loc+'EM_LO/muon_SFs.root:embed_trg_eff', 'm_trg_8_embed'),
+    (loc+'EM_LO/muon_SFs.root:data_iso_eff', 'm_looseiso_data'),
+    (loc+'EM_LO/muon_SFs.root:ZLL_iso_eff', 'm_looseiso_mc'),
+    (loc+'EM_LO/muon_SFs.root:embed_iso_eff', 'm_looseiso_embed'),
+
+    (loc+'EM_HI/aiso/muon_SFs.root:data_trg_eff', 'm_trg_23_aiso_data'),
+    (loc+'EM_HI/aiso/muon_SFs.root:ZLL_trg_eff', 'm_trg_23_aiso_mc'),
+    (loc+'EM_HI/aiso/muon_SFs.root:embed_trg_eff', 'm_trg_23_aiso_embed'),
+    (loc+'EM_LO/aiso/muon_SFs.root:data_trg_eff', 'm_trg_8_aiso_data'),
+    (loc+'EM_LO/aiso/muon_SFs.root:ZLL_trg_eff', 'm_trg_8_aiso_mc'),
+    (loc+'EM_LO/aiso/muon_SFs.root:embed_trg_eff', 'm_trg_8_aiso_embed'),
+    (loc+'EM_LO/aiso/muon_SFs.root:data_iso_eff', 'm_looseiso_aiso_data'),
+    (loc+'EM_LO/aiso/muon_SFs.root:ZLL_iso_eff', 'm_looseiso_aiso_mc'),
+    (loc+'EM_LO/aiso/muon_SFs.root:embed_iso_eff', 'm_looseiso_aiso_embed'), 
+
+    (loc+'MU20/muon_SFs.root:data_trg_eff', 'm_trg_20_data'),
+    (loc+'MU20/muon_SFs.root:ZLL_trg_eff', 'm_trg_20_mc'),
+    (loc+'MU20/muon_SFs.root:embed_trg_eff', 'm_trg_20_embed'),
+    (loc+'MU20/aiso1/muon_SFs.root:data_trg_eff', 'm_trg_20_aiso1_data'),
+    (loc+'MU20/aiso1/muon_SFs.root:ZLL_trg_eff', 'm_trg_20_aiso1_mc'),
+    (loc+'MU20/aiso1/muon_SFs.root:embed_trg_eff', 'm_trg_20_aiso1_embed'),
+    (loc+'MU20/aiso2/muon_SFs.root:data_trg_eff', 'm_trg_20_aiso2_data'),
+    (loc+'MU20/aiso2/muon_SFs.root:ZLL_trg_eff', 'm_trg_20_aiso2_mc'),
+    (loc+'MU20/aiso2/muon_SFs.root:embed_trg_eff', 'm_trg_20_aiso2_embed'),
+]
+
+for task in histsToWrap:
+    wsptools.SafeWrapHist(w, ['m_pt', 'expr::m_abs_eta("TMath::Abs(@0)",m_eta[0])'],
+                          GetFromTFile(task[0]), name=task[1])
+
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_trg_binned_23_data', ['m_trg_23_data', 'm_trg_23_aiso_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_trg_binned_23_mc', ['m_trg_23_mc', 'm_trg_23_aiso_mc'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_trg_binned_23_embed', ['m_trg_23_embed', 'm_trg_23_aiso_embed'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_trg_binned_8_data', ['m_trg_8_data', 'm_trg_8_aiso_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_trg_binned_8_mc', ['m_trg_8_mc', 'm_trg_8_aiso_mc'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_trg_binned_8_embed', ['m_trg_8_embed', 'm_trg_8_aiso_embed'])
+
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.15, 0.25, 0.50],
+                                   'm_trg_binned_20_data', ['m_trg_20_data', 'm_trg_20_aiso1_data', 'm_trg_20_aiso2_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.15, 0.25, 0.50],
+                                   'm_trg_binned_20_embed', ['m_trg_20_embed', 'm_trg_20_aiso1_embed', 'm_trg_20_aiso2_embed'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.15, 0.25, 0.50],
+                                   'm_trg_binned_20_mc', ['m_trg_20_mc', 'm_trg_20_aiso1_mc', 'm_trg_20_aiso2_mc'])
+
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_looseiso_binned_data', ['m_looseiso_data', 'm_looseiso_aiso_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_looseiso_binned_mc', ['m_looseiso_mc', 'm_looseiso_aiso_mc'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'm_iso', [0., 0.2, 0.50],
+                                   'm_looseiso_binned_embed', ['m_looseiso_embed', 'm_looseiso_aiso_embed'])
+
+w.factory('expr::m_looseiso_ratio("@0/@1", m_looseiso_data, m_looseiso_mc)')
+w.factory('expr::m_looseiso_embed_ratio("@0/@1", m_looseiso_data, m_looseiso_embed)')
+
+w.factory('expr::m_looseiso_binned_ratio("@0/@1", m_looseiso_binned_data, m_looseiso_binned_mc)')
+w.factory('expr::m_looseiso_binned_embed_ratio("@0/@1", m_looseiso_binned_data, m_looseiso_binned_embed)')
+
+for t in ['trg','trg_binned']:
+    w.factory('expr::m_%s_23_ratio("@0/@1", m_%s_23_data, m_%s_23_mc)' % (t, t, t))
+    w.factory('expr::m_%s_8_ratio("@0/@1", m_%s_8_data, m_%s_8_mc)' % (t, t, t))
+    w.factory('expr::m_%s_20_ratio("@0/@1", m_%s_20_data, m_%s_20_mc)' % (t, t, t))
+    w.factory('expr::m_%s_23_embed_ratio("@0/@1", m_%s_23_data, m_%s_23_embed)' % (t, t, t))
+    w.factory('expr::m_%s_8_embed_ratio("@0/@1", m_%s_8_data, m_%s_8_embed)' % (t, t, t))
+    w.factory('expr::m_%s_20_embed_ratio("@0/@1", m_%s_20_data, m_%s_20_embed)' % (t, t, t))
+
 # trigger SFs Electrons from KIT
 loc = 'inputs/2018/KIT/v18_2/'
 
@@ -384,6 +465,71 @@ w.factory('expr::e_id80iso_binned_kit_embed("@0*@1", e_id80_kit_embed, e_iso_bin
 for t in ['trg', 'trg_binned', 'trg27_trg32', 'trg27_trg32_binned', 'trg27_trg35', 'trg27_trg35_binned', 'trg32_trg35', 'trg32_trg35_binned', 'trg27_trg32_trg35', 'trg27_trg32_trg35_binned', 'trg27', 'trg32', 'trg32fb', 'trg35','id90', 'id80', 'iso', 'iso_binned', 'id90iso_binned', 'id80iso_binned', 'trg_EleTau_Ele24Leg']:
     w.factory('expr::e_%s_kit_ratio("@0/@1", e_%s_kit_data, e_%s_kit_mc)' % (t, t, t))
     w.factory('expr::e_%s_embed_kit_ratio("@0/@1", e_%s_kit_data, e_%s_kit_embed)' % (t, t, t))
+
+# emu and e+tau trigger electron scale factors from IC
+
+loc = 'inputs/2018/ICSF/'
+
+histsToWrap = [
+    (loc+'EM_LO/electron_SFs.root:data_trg_eff', 'e_trg_12_data'),
+    (loc+'EM_LO/electron_SFs.root:ZLL_trg_eff', 'e_trg_12_mc'),
+    (loc+'EM_LO/electron_SFs.root:embed_trg_eff', 'e_trg_12_embed'),
+    (loc+'EM_HI/electron_SFs.root:data_trg_eff', 'e_trg_23_data'),
+    (loc+'EM_HI/electron_SFs.root:ZLL_trg_eff', 'e_trg_23_mc'),
+    (loc+'EM_HI/electron_SFs.root:embed_trg_eff', 'e_trg_23_embed'),
+
+    (loc+'EM_LO/aiso/electron_SFs.root:data_trg_eff', 'e_trg_12_aiso_data'),
+    (loc+'EM_LO/aiso/electron_SFs.root:ZLL_trg_eff', 'e_trg_12_aiso_mc'),
+    (loc+'EM_LO/aiso/electron_SFs.root:embed_trg_eff', 'e_trg_12_aiso_embed'),
+    (loc+'EM_HI/aiso/electron_SFs.root:data_trg_eff', 'e_trg_23_aiso_data'),
+    (loc+'EM_HI/aiso/electron_SFs.root:ZLL_trg_eff', 'e_trg_23_aiso_mc'),
+    (loc+'EM_HI/aiso/electron_SFs.root:embed_trg_eff', 'e_trg_23_aiso_embed'),
+
+    (loc+'EL24/electron_SFs.root:data_trg_eff', 'e_trg_24_data'),
+    (loc+'EL24/electron_SFs.root:ZLL_trg_eff', 'e_trg_24_mc'),
+    (loc+'EL24/electron_SFs.root:embed_trg_eff', 'e_trg_24_embed'),
+    (loc+'EL24/aiso1/electron_SFs.root:data_trg_eff', 'e_trg_24_aiso1_data'),
+    (loc+'EL24/aiso1/electron_SFs.root:ZLL_trg_eff', 'e_trg_24_aiso1_mc'),
+    (loc+'EL24/aiso1/electron_SFs.root:embed_trg_eff', 'e_trg_24_aiso1_embed'),
+    (loc+'EL24/aiso2/electron_SFs.root:data_trg_eff', 'e_trg_24_aiso2_data'),
+    (loc+'EL24/aiso2/electron_SFs.root:ZLL_trg_eff', 'e_trg_24_aiso2_mc'),
+    (loc+'EL24/aiso2/electron_SFs.root:embed_trg_eff', 'e_trg_24_aiso2_embed'),
+
+]
+
+for task in histsToWrap:
+    wsptools.SafeWrapHist(w, ['e_pt', 'expr::e_abs_eta("TMath::Abs(@0)",e_eta[0])'],
+                          GetFromTFile(task[0]), name=task[1])
+
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.5],
+                                   'e_trg_binned_23_data', ['e_trg_23_data', 'e_trg_23_aiso_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.50],
+                                   'e_trg_binned_23_mc', ['e_trg_23_mc', 'e_trg_23_aiso_mc'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.50],
+                                   'e_trg_binned_23_embed', ['e_trg_23_embed', 'e_trg_23_aiso_embed'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.50],
+                                   'e_trg_binned_12_data', ['e_trg_12_data', 'e_trg_12_aiso_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.50],
+                                   'e_trg_binned_12_mc', ['e_trg_12_mc', 'e_trg_12_aiso_mc'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.50],
+                                   'e_trg_binned_12_embed', ['e_trg_12_embed', 'e_trg_12_aiso_embed'])
+
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.25, 0.5],
+                                   'e_trg_binned_24_data', ['e_trg_24_data', 'e_trg_24_aiso1_data', 'e_trg_24_aiso2_data'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.25, 0.5],
+                                   'e_trg_binned_24_mc', ['e_trg_24_mc', 'e_trg_24_aiso1_mc', 'e_trg_24_aiso2_mc'])
+wsptools.MakeBinnedCategoryFuncMap(w, 'e_iso', [0., 0.15, 0.25, 0.5],
+                                   'e_trg_binned_24_embed', ['e_trg_24_embed', 'e_trg_24_aiso1_embed', 'e_trg_24_aiso2_embed'])
+
+for t in ['trg','trg_binned']:
+    w.factory('expr::e_%s_12_ratio("@0/@1", e_%s_12_data, e_%s_12_mc)' % (t, t, t))
+    w.factory('expr::e_%s_23_ratio("@0/@1", e_%s_23_data, e_%s_23_mc)' % (t, t, t))
+    w.factory('expr::e_%s_24_ratio("@0/@1", e_%s_24_data, e_%s_24_mc)' % (t, t, t))
+    w.factory('expr::e_%s_12_embed_ratio("@0/@1", e_%s_12_data, e_%s_12_embed)' % (t, t, t))
+    w.factory('expr::e_%s_23_embed_ratio("@0/@1", e_%s_23_data, e_%s_23_embed)' % (t, t, t))
+    w.factory('expr::e_%s_24_embed_ratio("@0/@1", e_%s_24_data, e_%s_24_embed)' % (t, t, t))
+
+# KIT tau trigger scale factors
 
 loc = 'inputs/2018/KIT/TauTrigger/'
 TauTriggerFile = ROOT.TFile(loc+"output_2018_tau_leg.root", "read")
